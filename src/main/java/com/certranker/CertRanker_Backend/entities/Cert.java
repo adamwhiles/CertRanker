@@ -1,17 +1,29 @@
 package com.certranker.CertRanker_Backend.entities;
 
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
+import org.springframework.data.annotation.Id;
+
+import java.util.List;
+
+@Container(containerName = "learningresources")
 public class Cert {
 
+    @Id
+    @PartitionKey
     private String id;
     private String name;
     private String description;
     private String url;
 
-    public Cert(String id, String name, String description, String url) {
+    private List<LearningResource> learningResourceList;
+
+    public Cert(String id, String name, String description, String url, List<LearningResource> learningResourceList) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.url = url;
+        this.learningResourceList = learningResourceList;
     }
 
     public String getId() {
@@ -44,6 +56,14 @@ public class Cert {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public List<LearningResource> getLearningResourceList() {
+        return learningResourceList;
+    }
+
+    public void setLearningResourceList(List<LearningResource> learningResourceList) {
+        this.learningResourceList = learningResourceList;
     }
 
     @Override
