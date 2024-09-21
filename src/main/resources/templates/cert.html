@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Certranker - Home</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Certranker</a>
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1 th:text="${cert.getId() + ' : ' + cert.getName()}">Welcome to Certranker</h1>
+      <p th:text="${cert.description}">Find, Submit, and Vote for the Best Learning Resources for Microsoft Certifications.</p>
+    </div>
+  </section>
+
+  <!-- Certifications List Section -->
+  <section id="certifications" class="certifications-section">
+    <div class="container">
+      <h2>Popular Microsoft Certifications</h2>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Certranker. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
