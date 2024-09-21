@@ -52,12 +52,10 @@ public class CertServiceImpl implements CertService {
             List<LearningResource> resources = cert.getLearningResourceList();
             if (resources != null) {
                 for(LearningResource resource : resources) {
-                    if (resource.getId() != null) {
-                        if (resource.getId().equals(resourceId)) {
+                    if (resource.getId() != null && resource.getId().equals(resourceId)) {
                             resource.getVotes().add(vote);
 
                             return certRepository.save(cert);
-                        }
                     }
                 }
             }
