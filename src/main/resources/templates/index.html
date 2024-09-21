@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Certranker - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Certranker</a>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Certranker</h1>
+            <p>Find, Submit, and Vote for the Best Learning Resources for Microsoft Certifications.</p>
+            <a href="#certifications" class="btn">Browse Certifications</a>
+        </div>
+    </section>
+
+    <!-- Certifications List Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2>Popular Microsoft Certifications</h2>
+            <ul class="cert-list">
+                <li>
+                    <a href="#">
+                        <img src="https://via.placeholder.com/50" alt="Certification Icon">
+                        <div class="cert-info">
+                            <h3>Microsoft Azure Fundamentals</h3>
+                            <p>Beginner-level certification focusing on the basics of cloud services and Azure.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://via.placeholder.com/50" alt="Certification Icon">
+                        <div class="cert-info">
+                            <h3>Microsoft 365 Certified: Security Administrator</h3>
+                            <p>Intermediate certification that validates skills in security management for Microsoft 365.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://via.placeholder.com/50" alt="Certification Icon">
+                        <div class="cert-info">
+                            <h3>Microsoft Certified: Data Analyst Associate</h3>
+                            <p>For those proficient in Power BI and looking to make data-driven decisions for organizations.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://via.placeholder.com/50" alt="Certification Icon">
+                        <div class="cert-info">
+                            <h3>Microsoft Certified: Azure Solutions Architect Expert</h3>
+                            <p>Advanced certification for professionals working with Azure to design cloud-based solutions.</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Certranker. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
