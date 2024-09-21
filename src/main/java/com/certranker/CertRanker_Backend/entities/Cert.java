@@ -4,6 +4,7 @@ import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Container(containerName = "learningresources")
@@ -23,7 +24,7 @@ public class Cert {
         this.name = name;
         this.description = description;
         this.url = url;
-        this.learningResourceList = learningResourceList;
+        this.learningResourceList = (learningResourceList == null) ? new ArrayList<>() : learningResourceList;
     }
 
     public String getId() {

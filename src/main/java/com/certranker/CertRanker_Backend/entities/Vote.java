@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.annotation.processing.Generated;
+import java.util.UUID;
 
 public class Vote {
 
@@ -12,10 +13,12 @@ public class Vote {
     @GeneratedValue
     private String id;
     private String userId;
+    private int vote;
 
-    public Vote(String id, String userId) {
-        this.id = id;
+    public Vote(String userId, int vote) {
+        this.id = UUID.randomUUID().toString();
         this.userId = userId;
+        this.vote = vote;
     }
 
     public String getId() {
@@ -33,4 +36,13 @@ public class Vote {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    public int getVote() {
+        return vote;
+    }
+
+    public void setVote(int vote) {
+        this.vote = vote;
+    }
+
 }

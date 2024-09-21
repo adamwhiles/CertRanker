@@ -3,7 +3,9 @@ package com.certranker.CertRanker_Backend.entities;
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class LearningResource {
     @Id
@@ -15,12 +17,16 @@ public class LearningResource {
 
     private List<Vote> votes;
 
-    public LearningResource(String id, String name, String description, String url, List<Vote> votes) {
-        this.id = id;
+    public LearningResource() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public LearningResource(String name, String description, String url, List<Vote> votes) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.url = url;
-        this.votes = votes;
+        this.votes = (votes == null) ? new ArrayList<>() : votes;
     }
 
     public String getId() {

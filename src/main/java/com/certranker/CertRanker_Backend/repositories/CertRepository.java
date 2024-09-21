@@ -11,8 +11,5 @@ import java.util.List;
 
 @Repository
 public interface CertRepository extends CrudRepository<Cert, String> {
-    @NotNull
-    List<Cert> findAll();
-    Cert findOneById(String id);
 
 }
