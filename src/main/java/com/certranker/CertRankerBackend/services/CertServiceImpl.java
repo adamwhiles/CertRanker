@@ -1,9 +1,10 @@
-package com.certranker.CertRanker_Backend.services;
+package com.certranker.CertRankerBackend.services;
 
-import com.certranker.CertRanker_Backend.entities.Cert;
-import com.certranker.CertRanker_Backend.entities.LearningResource;
-import com.certranker.CertRanker_Backend.entities.Vote;
-import com.certranker.CertRanker_Backend.repositories.CertRepository;
+import com.certranker.CertRankerBackend.entities.Cert;
+import com.certranker.CertRankerBackend.entities.LearningResource;
+import com.certranker.CertRankerBackend.entities.Vote;
+import com.certranker.CertRankerBackend.repositories.CertRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class CertServiceImpl implements CertService {
 
     private final CertRepository certRepository;
 
+    @Autowired
     public CertServiceImpl(CertRepository certRepository) {
         this.certRepository = certRepository;
     }
@@ -24,7 +26,7 @@ public class CertServiceImpl implements CertService {
     }
 
     @Override
-    public Cert findOneById(String id) {
+    public Cert findById(String id) {
         return certRepository.findById(id).orElse(null);
     }
 

@@ -1,4 +1,4 @@
-package com.certranker.CertRanker_Backend.entities;
+package com.certranker.CertRankerBackend.entities;
 
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import org.springframework.data.annotation.Id;

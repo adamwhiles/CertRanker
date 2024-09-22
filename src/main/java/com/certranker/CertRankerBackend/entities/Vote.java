@@ -1,10 +1,8 @@
-package com.certranker.CertRanker_Backend.entities;
+package com.certranker.CertRankerBackend.entities;
 
 import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import org.springframework.data.annotation.Id;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.annotation.processing.Generated;
 import java.util.UUID;
 
 public class Vote {

@@ -1,4 +1,4 @@
-package com.certranker.CertRanker_Backend;
+package com.certranker.CertRankerBackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

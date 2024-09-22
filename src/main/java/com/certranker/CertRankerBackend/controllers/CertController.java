@@ -1,10 +1,10 @@
-package com.certranker.CertRanker_Backend.controllers;
+package com.certranker.CertRankerBackend.controllers;
 
-import com.certranker.CertRanker_Backend.entities.Cert;
-import com.certranker.CertRanker_Backend.entities.LearningResource;
-import com.certranker.CertRanker_Backend.entities.Vote;
-import com.certranker.CertRanker_Backend.repositories.CertRepository;
-import com.certranker.CertRanker_Backend.services.CertService;
+import com.certranker.CertRankerBackend.entities.Cert;
+import com.certranker.CertRankerBackend.entities.LearningResource;
+import com.certranker.CertRankerBackend.entities.Vote;
+import com.certranker.CertRankerBackend.repositories.CertRepository;
+import com.certranker.CertRankerBackend.services.CertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,24 +17,23 @@ import java.util.Optional;
 public class CertController {
 
     @Autowired
-    private CertService certService;
+    private final CertService certService;
 
-    private final CertRepository certRepository;
-
-    public CertController(final CertRepository certRepository) {
-        this.certRepository = certRepository;
+    public CertController(CertService certService) {
+        this.certService = certService;
     }
+
 
     // Get all cert
     @GetMapping("/certs")
     List<Cert> getCerts() {
-        return (List<Cert>) certRepository.findAll();
+        return (List<Cert>) certService.findAll();
     }
 
     // Get cer by id
     @GetMapping("/certs/{certId}")
     Optional<Cert> getCert(@PathVariable String certId) {
-        return certRepository.findById(certId);
+        return Optional.ofNullable(certService.findById(certId));
     }
 
     // Add learning resource to cert

@@ -1,6 +1,6 @@
-package com.certranker.CertRanker_Backend.controllers;
+package com.certranker.CertRankerBackend.controllers;
 
-import com.certranker.CertRanker_Backend.services.CertService;
+import com.certranker.CertRankerBackend.services.CertService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +23,7 @@ public class IndexController {
 
     @RequestMapping("/certs/{certId}")
     public String showCert(@PathVariable String certId, Model model) {
-        model.addAttribute("cert", certService.findOneById(certId));
+        model.addAttribute("cert", certService.findById(certId));
         return "cert";
     }
 }
