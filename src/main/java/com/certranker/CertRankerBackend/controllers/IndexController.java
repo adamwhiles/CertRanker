@@ -21,6 +21,11 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/about")
+    public String about() {
+        return "about";
+    }
+
     @RequestMapping("/certs/{certId}")
     public String showCert(@PathVariable String certId, Model model) {
         model.addAttribute("cert", certService.findById(certId));
