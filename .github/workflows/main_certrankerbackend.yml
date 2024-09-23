@@ -24,7 +24,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-        with:
+        env:
           COSMOS_KEY: ${{ secrets.COSMOS_KEY }}
           DB_NAME: ${{ secrets.DB_NAME }}
           COSMOS_URI: ${{ secrets.COSMOS_URI }}
