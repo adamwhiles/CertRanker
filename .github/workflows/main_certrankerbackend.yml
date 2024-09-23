@@ -23,6 +23,10 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
+        with:
+          COSMOS_KEY: ${{ secrets.COSMOS_KEY }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          COSMOS_URI: ${{ secrets.COSMOS_URI }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
