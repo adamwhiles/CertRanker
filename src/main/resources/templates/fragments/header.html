@@ -13,7 +13,19 @@
         <li><a href="#home">Home</a></li>
         <li><a href="https://certranker.com/about">About</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#login">Login</a></li>
+        <!-- Show this only if the user is authenticated and not anonymous -->
+        <li th:if="${#authentication.authenticated and #authentication.principal != 'anonymousUser'}">
+          <span th:text="${#authentication.principal.username}">User</span>
+          <a th:href="@{/logout}">Logout</a>
+        </li>
+
+        <!-- Show login/register if the user is anonymous (not logged in) -->
+        <li th:if="${#authentication.principal == 'anonymousUser'}">
+          <a href="/login">Login</a>
+        </li>
+        <li th:if="${#authentication.principal == 'anonymousUser'}">
+          <a href="/register">Register</a>
+        </li>
       </ul>
     </div>
 </nav>
