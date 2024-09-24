@@ -1,5 +1,5 @@
 # Certranker
-
+![Build Status](https://img.shields.io/github/actions/workflow/status/adamwhiles/certranker/main_certrankerbackend.yml?branch=main)
 [![Azure](https://img.shields.io/badge/Hosted_on-Azure-blue)](https://certranker.com)
 [![Java-SpringBoot](https://img.shields.io/badge/Java-SpringBoot-brightgreen)](https://spring.io/projects/spring-boot)
 [![CosmosDB](https://img.shields.io/badge/Database-CosmosDB-orange)](https://azure.microsoft.com/en-us/products/cosmos-db/)
