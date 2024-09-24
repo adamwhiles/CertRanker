@@ -10,6 +10,7 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
+    padding-top: 60px;
 }
 
 a {
@@ -25,12 +26,14 @@ a:hover {
 .navbar {
     background-color: #1f1f1f;
     padding: 1rem 0;
-    position: relative;
-    display: flex;
+    position: fixed;
+    display: block;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 60px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -100,6 +103,14 @@ a:hover {
         text-align: center;
         gap: 0;
     }
+    .hero-section, .resources-section {
+        padding-top: 1rem; /* Reduce padding to give more space */
+        padding-bottom: 1rem;
+        position: relative;
+        min-height: 100vh;
+    }
+
+
 
     .nav-links.show {
         display: flex;
@@ -113,16 +124,21 @@ a:hover {
         display: flex;
     }
 }
-
+.hero-container {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+}
 /* Hero Section */
 .hero-section {
-    height: 90vh;
     background: linear-gradient(to right bottom, #272727, #121212);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .hero-content h1 {
