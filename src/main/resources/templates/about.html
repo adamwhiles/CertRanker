@@ -3,38 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Certranker - About</title>
-  <link rel="stylesheet" href="../../styles.css">
+  <title>About Us - Certranker</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <header>
   <div th:replace="fragments/header :: header"></div>
 </header>
-<section class="about-section">
-<div class="container">
-<h1>About Certranker</h1>
 
-<p>Welcome to Certranker, your go-to platform for discovering and sharing the best learning resources for Microsoft certifications!</p>
+<main>
+  <section class="about-section">
+    <div class="container">
+      <h1>About Certranker</h1>
+      <p>Certranker is your one-stop platform for finding, submitting, and voting on the best learning resources for Microsoft certifications. Our mission is to empower professionals by providing access to high-quality, community-curated resources that help you succeed in your certification journey.</p>
 
-<p>Our mission is to help certification seekers by providing a centralized hub where users can:</p>
+      <h2>Our Mission</h2>
+      <p>At Certranker, we believe that learning should be accessible, efficient, and driven by the community. That's why we allow users to submit their favorite learning resources and vote on the most helpful materials, ensuring that the best content rises to the top. Whether you're a beginner looking to get certified or an expert aiming to enhance your skills, we’ve got you covered.</p>
 
-  <ul>
-    <li>Browse a comprehensive list of Microsoft certifications.</li>
-    <li>Submit valuable learning resources such as articles, tutorials, and videos.</li>
-    <li>Vote on resources to highlight the most helpful materials.</li>
-  </ul>
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Comprehensive lists of Microsoft certifications</li>
+        <li>Community-driven learning resource rankings</li>
+        <li>A simple, user-friendly interface</li>
+        <li>Ability to submit and vote on your favorite learning materials</li>
+        <li>Regular updates to keep up with the latest certifications</li>
+      </ul>
 
+      <h2>Join the Community</h2>
+      <p>Become part of a growing community of learners and professionals who are helping to shape the future of certification preparation. Together, we can make the certification process easier and more effective for everyone.</p>
+    </div>
+  </section>
+</main>
 
-<p>Whether you’re just starting out on your certification journey or looking to level up, Certranker makes it easy to find and contribute high-quality resources curated by the community.</p>
+<footer>
+  <div th:replace="fragments/footer :: footer"></div>
+</footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
 
-  <h2>Why Certranker?</h2>
-
-<p>With the vast amount of content available online, finding the right study material can be overwhelming. At Certranker, we streamline this process by letting the community upvote the best resources, ensuring that the most effective materials rise to the top.</p>
-</div>
-</section>
-  <footer>
-    <div th:replace="fragments/footer :: footer"></div>
-  </footer>
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 </body>
 </html>

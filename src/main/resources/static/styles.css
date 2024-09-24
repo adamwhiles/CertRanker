@@ -30,6 +30,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 60px;
 }
 
 .navbar .container {
@@ -216,23 +217,39 @@ a:hover {
     color: #bbb;
 }
 
+/* About Section */
 .about-section {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     background-color: #1b1b1b;
     color: #e0e0e0;
     text-align: center;
 }
 
-.about-section h2 {
-    font-size: 2.5rem;
+.about-section h1 {
+    font-size: 3rem;
     margin-bottom: 2rem;
     color: #bb86fc;
 }
 
-.about-section h1 {
-    font-size: 3rem;
-    color: #bb86fc;
+.about-section h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
+    color: #03dac6;
+}
+
+.about-section p, .about-section ul {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.about-section ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Resources Section */

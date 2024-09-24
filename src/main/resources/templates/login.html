@@ -42,5 +42,13 @@
 <footer>
   <div th:replace="fragments/footer :: footer"></div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
