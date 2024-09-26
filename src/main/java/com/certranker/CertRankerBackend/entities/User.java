@@ -17,6 +17,8 @@ public class User {
     private String password;
     private String email;
     private String provider;
+    private boolean verified;
+    private String verificationToken;
 
     public User(String username, String password, String email, String provider) {
         this.id = UUID.randomUUID().toString();
@@ -24,6 +26,8 @@ public class User {
         this.password = password;
         this.email = email;
         this.provider = provider;
+        this.verified = false;
+        this.verificationToken = UUID.randomUUID().toString();
     }
 
     public String getId() {
@@ -64,5 +68,21 @@ public class User {
 
     public void setProvider(String provider) {
         this.provider = provider;
+    }
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
+    }
+
+    public String getVerificationToken() {
+        return verificationToken;
+    }
+
+    public void setVerificationToken(String verificationToken) {
+        this.verificationToken = verificationToken;
     }
 }
