@@ -2,6 +2,7 @@ package com.certranker.CertRankerBackend.controllers;
 
 import com.certranker.CertRankerBackend.entities.User;
 import com.certranker.CertRankerBackend.services.UserService;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class UserController {
 
 
     @PostMapping("/registernewuser")
-    public ModelAndView registerUser(@RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirm-password") String confirmPassword, @RequestParam("username") String username, RedirectAttributes redirectAttributes) {
+    public ModelAndView registerUser(@RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirm-password") String confirmPassword, @RequestParam("username") String username, RedirectAttributes redirectAttributes) throws MessagingException {
 
         final Pattern SPECIAL_CHAR_PATTERN = Pattern.compile("[!@#$%^&*(),.?\":{}|<>]");
 

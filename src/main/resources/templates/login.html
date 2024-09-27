@@ -18,8 +18,10 @@
     <div class="hero-content">
       <h1>Login to Certranker</h1>
       <!-- Error Message Section -->
+      <!-- Error Message Section -->
       <div th:if="${param.error}" class="alert alert-danger">
-        <p>Invalid email or password.</p>
+        <p th:if="${param.error.contains('true')}" th:text="'Invalid username or password.'"></p>
+        <p th:if="${param.error.contains('verification')}" th:text="'Your account is not verified. Please check your email to verify your account.'"></p>
       </div>
       <p>Please enter your email and password to login.</p>
       <form th:action="@{/login}" method="post" class="form-container">
