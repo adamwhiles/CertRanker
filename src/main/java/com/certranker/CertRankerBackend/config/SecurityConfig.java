@@ -1,6 +1,7 @@
 package com.certranker.CertRankerBackend.config;
 
 import com.certranker.CertRankerBackend.services.CustomUserDetailsService;
+import com.certranker.CertRankerBackend.utility.CustomAuthenticationFailureHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,21 +24,23 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    @Autowired
     private CustomUserDetailsService userDetailsService;
+    @Autowired
+    private CustomAuthenticationFailureHandler authenticationFailureHandler;
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**", "/login", "/register", "/registernewuser", "/about").permitAll()  // Fixing URL matchers
+                        .requestMatchers("/**", "/login", "/register", "/registernewuser", "/about", "/verify", "/test1").permitAll()  // Fixing URL matchers
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .loginProcessingUrl("/login")
+                        .failureHandler(authenticationFailureHandler)
                         .usernameParameter("email")
                         .defaultSuccessUrl("/")
-                        .failureUrl("/login?error=true")
                         .permitAll()
                 )
                 .logout((logout) -> logout
