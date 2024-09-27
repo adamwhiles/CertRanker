@@ -28,6 +28,10 @@ jobs:
           COSMOS_KEY: ${{ secrets.COSMOS_KEY }}
           DB_NAME: ${{ secrets.DB_NAME }}
           COSMOS_URI: ${{ secrets.COSMOS_URI }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP.PASSWORD }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
