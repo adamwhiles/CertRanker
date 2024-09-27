@@ -43,10 +43,4 @@ public class CertController {
         return ResponseEntity.ok(updatedCert);
     }
 
-    @PostMapping("/certs/{certId}/resources/{resourceId}/votes")
-    public ResponseEntity<Cert> addVoteToResource(@PathVariable String certId, @PathVariable String resourceId, @RequestBody Vote vote) {
-        Cert updatedCert = certService.addVoteToResource(certId, resourceId, vote);
-        return ResponseEntity.ok(updatedCert);
-    }
-
 }

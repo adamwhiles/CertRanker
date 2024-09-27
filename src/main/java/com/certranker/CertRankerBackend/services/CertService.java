@@ -10,5 +10,4 @@ public interface CertService {
     Iterable<Cert> findAll();
     Cert findById(String id);
     Cert addResourceToCert(String id, LearningResource learningResource);
-    Cert addVoteToResource(String certId, String resourceId, Vote vote);
 }

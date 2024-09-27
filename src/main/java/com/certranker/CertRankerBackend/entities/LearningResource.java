@@ -14,19 +14,18 @@ public class LearningResource {
     private String name;
     private String description;
     private String url;
-
-    private List<Vote> votes;
+    private Votes votes;
 
     public LearningResource() {
         this.id = UUID.randomUUID().toString();
     }
 
-    public LearningResource(String name, String description, String url, List<Vote> votes) {
+    public LearningResource(String name, String description, String url, Votes votes) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.url = url;
-        this.votes = (votes == null) ? new ArrayList<>() : votes;
+        this.votes = votes;
     }
 
     public String getId() {
@@ -61,11 +60,11 @@ public class LearningResource {
         this.url = url;
     }
 
-    public List<Vote> getVotes() {
+    public Votes getVotes() {
         return votes;
     }
 
-    public void setVotes(List<Vote> votes) {
+    public void setVotes(Votes votes) {
         this.votes = votes;
     }
 }
