@@ -46,24 +46,4 @@ public class CertServiceImpl implements CertService {
         }
     }
 
-    @Override
-    public Cert addVoteToResource(String certId, String resourceId, Vote vote) {
-        Optional<Cert> certOptional = certRepository.findById(certId);
-        if (certOptional.isPresent()) {
-            Cert cert = certOptional.get();
-            List<LearningResource> resources = cert.getLearningResourceList();
-            if (resources != null) {
-                for(LearningResource resource : resources) {
-                    if (resource.getId() != null && resource.getId().equals(resourceId)) {
-                            resource.getVotes().add(vote);
-
-                            return certRepository.save(cert);
-                    }
-                }
-            }
-            throw new RuntimeException("Resource with ID " + resourceId + " not found in Cert with ID " + certId);
-        } else {
-            throw new RuntimeException("Cert with ID " + certId + " not found");
-        }
-    }
 }
